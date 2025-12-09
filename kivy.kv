@@ -1,0 +1,43 @@
+<MainLayout>:
+    orientation: 'vertical'
+    padding: 12
+    spacing: 12
+
+    Label:
+        text: "A.R.I Assistant"
+        font_size: '24sp'
+        size_hint: 1, 0.15
+        halign: 'center'
+        valign: 'middle'
+        text_size: self.size
+
+    BoxLayout:
+        size_hint: 1, 0.15
+        spacing: 12
+
+        Button:
+            text: "Start Service"
+            background_color: 0.2,0.6,0.2,1
+            on_press: root.do_start()
+
+        Button:
+            text: "Stop Service"
+            background_color: 0.8,0.2,0.2,1
+            on_press: root.do_stop()
+
+        Button:
+            text: "Enroll Wake Word"
+            background_color: 0.2,0.4,0.8,1
+            on_press: root.do_enroll()
+
+    ScrollView:
+        size_hint: 1, 0.7
+
+        Label:
+            id: log
+            text: "Logs will appear here"
+            size_hint_y: None
+            height: self.texture_size[1]
+            halign: 'left'
+            valign: 'top'
+            text_size: self.width, None
